@@ -6,10 +6,13 @@ import urlFor from "../lib/urlFor";
 import dynamic from "next/dynamic";
 import { useStateIfMounted } from "use-state-if-mounted";
 import ReactWhatsapp from "react-whatsapp";
+import ListIcon from '@mui/icons-material/List';
 
 function Menu({search}:any){
     const [currentIndex, setCurrentIndex] = useStateIfMounted(0);
     const [currentId, setCurrentId] = useStateIfMounted(0);
+    const[onScreen, setOnScreen] = useStateIfMounted(true);
+
     if(search[0]){
       var imagesArray = search[currentId].image
     var imagess = imagesArray.map((item:any) => urlFor(item).url())
@@ -54,7 +57,6 @@ function Menu({search}:any){
          imagess = imagesArray.map((item:any) => urlFor(item).url())
         setImages(imagess)
         setCurrentId(id)
-        
     }
 
     useEffect(() => {
@@ -66,18 +68,18 @@ function Menu({search}:any){
     return (
       <div>
             <div className="shop-container">
-              
-                    <div className="shop-options">
+                    <div className={onScreen ? "shop-options" : "w-0"}>
                         {search.map((item:any,index:number) => (
                         <div className={currentId === index ? "shop-left-item-active" : "shop-left-item"} key={index} onClick={() => handleChange(index)}>{item.title}</div>
                         ))}
                     </div>
                     
-                      <div className="shop-show">
+                      <div className={onScreen ? "shop-show" : "shop-show-full"}>
                                       <div className='sliderStyles'>
-                                            <div className='leftArrowStyles' onClick={goToPrevious}><ArrowBackIosNewIcon/></div>
+                                        <button onClick={() => onScreen ? setOnScreen(false) : setOnScreen(true)} className="options-button"><ListIcon/></button>
+                                            <div className='leftArrowStyles2' onClick={goToPrevious}><ArrowBackIosNewIcon/></div>
                                             <div style={slidesStyles}></div>
-                                            <div className='rightArrowStyles' onClick={goToNext}><ArrowForwardIosIcon/></div>
+                                            <div className='rightArrowStyles2' onClick={goToNext}><ArrowForwardIosIcon/></div>
                                                 <div className='dotsContainer'>{images.map((slide:any, slideIndex:any) => (
                                                           <div key={slideIndex} className={currentIndex === slideIndex ? "dots-active" : "dots"} onClick={() => goToSlide(slideIndex)}>⬤</div>
                                                         ))}</div>

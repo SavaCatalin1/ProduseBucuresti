@@ -41,7 +41,7 @@ function Banner({banner}: Props) {
     <div>
       <div className='leftArrowStyles' onClick={goToPrevious}><ArrowBackIosNewIcon/></div>
     <div className='hero-banner-container'>
-      <div className='hero-banner-wrapper'>
+      
         <div className='hero-banner-text'>
         <p className='beats-solo'>{banner[currentIndex].text_1}</p>
         <h3 className='hero-banner-text-h3'>{banner[currentIndex].text_2}</h3>
@@ -58,7 +58,6 @@ function Banner({banner}: Props) {
               <p key={index}>{item}</p>
             ))}
           </div>
-        </div>
       </div>
     </div>
     <div className='rightArrowStyles' onClick={goToNext}><ArrowForwardIosIcon/></div>
