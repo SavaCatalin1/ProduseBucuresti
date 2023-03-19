@@ -28,8 +28,8 @@ function Navbar({categories}: Props) {
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl px-4 md:px-6 py-2.5">
           {/* Logo */}
             <Link href="/" className="flex items-center">
-                <img src="https://flowbite.com/docs/images/logo.svg" className="h-6 mr-3 sm:h-9" alt="Flowbite Logo" />
-                <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+                <img src="https://flowbite.com/docs/images/logo.svg" className="h-6 mr-3 sm:h-9" alt="Produse Bucuresti Logo" />
+                <p><span className="text-gray-700 font-semibold">Produse</span><span className="text-small text-gray-300">Bucuresti</span></p>
             </Link>
 
 

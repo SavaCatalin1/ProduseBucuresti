@@ -5,7 +5,7 @@ import { client } from '../../lib/sanity.client'
 import '../../styles/globals.css'
 
 export const metadata = {
-  title: 'Mano'
+  title: 'Produse Bucuresti'
 }
 
 export const revalidate = 60;

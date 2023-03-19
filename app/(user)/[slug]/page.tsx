@@ -30,13 +30,18 @@ async function Category({params: {slug}}: Props) {
         image[]{..., asset{...}}
     } | order(title asc)
     `
-    
     const search = await client.fetch(queryTwo)
-
   return (
     <div>
         <Menu search={search}/>
-        
+        <div className="preturi-container">
+            <h1>Preturi</h1>
+            <div className="preturi-wrapper">
+            {elems.preturi.map((item:string, index:number) => (
+                <h3 className="preturi-item" key={index}>{item}</h3>
+            ))}
+            </div>
+        </div>
     </div>
   )
 }

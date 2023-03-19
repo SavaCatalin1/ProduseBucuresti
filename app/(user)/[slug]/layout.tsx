@@ -2,7 +2,7 @@ import '../../../styles/globals.css'
 import ReactWhatsapp from 'react-whatsapp';
 
 export const metadata = {
-  title: 'Mano'
+  title: 'Produse Bucuresti'
 }
 
 export default async function RootLayout({

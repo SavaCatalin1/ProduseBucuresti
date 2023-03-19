@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .hero-banner-container{
-    padding: 100px 40px;
+    padding: 80px 40px;
     background-color: #dcdcdc;
     border-radius: 15px;
     position: relative;
@@ -16,7 +16,6 @@
   .hero-banner-container .beats-solo{
     color: white;
     font-size: 3.5em;
-    margin-left: -20px;
     text-transform: uppercase;
     white-space: nowrap;
   }
@@ -34,17 +33,22 @@
   }
 
   .hero-banner-text{
+    display: flex;
+    flex-direction: column;
     width: 45%;
     height: auto;
+    align-items: flex-start;
   }
   
   .hero-banner-text-h1{
     font-size: 20px;
     margin-top: 2rem;
+
   }
   .hero-banner-text-h3{
     font-size: 2rem;
     margin-top: 2rem;
+    white-space: nowrap;
   }
   .hero-banner-image{
     position: absolute;
@@ -52,11 +56,12 @@
     width: auto;
     background-color: black;
     max-height: 405px;
-    left:50%;
+    left:60%;
     min-width: 500px;
     max-width: 500px;
     top:2%;
     object-fit: cover;
+    border-radius: 20px;
   }
 
   .hero-banner-wrapper{
@@ -279,6 +284,34 @@
     align-self: center;
   }
 
+.preturi-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.preturi-container h1{
+  font-weight: 500;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.preturi-wrapper{
+  background-color:#dcdcdc;
+  padding: 60px;
+  border-radius: 20px;
+  box-shadow: 14px 10px 33px -6px rgba(0,0,0,0.2);
+-webkit-box-shadow: 14px 10px 33px -6px rgba(0,0,0,0.3);
+-moz-box-shadow: 14px 10px 33px -6px rgba(0,0,0,0.2);  
+}
+
+.preturi-item{
+  padding: 8px;
+  font-size: 18px;
+  font-weight: 300;
+}
 
   @media screen and (max-width: 768px) {
     .hero-banner-container{

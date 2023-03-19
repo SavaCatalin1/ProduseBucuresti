@@ -37,13 +37,9 @@ function Banner({banner}: Props) {
     setCurrentIndex(newIndex)
   }
 
-  const goToSlide = (slideIndex:any) => {
-    setCurrentIndex(slideIndex)
-  }
-
-
   return (
-    <div><div className='leftArrowStyles' onClick={goToPrevious}><ArrowBackIosNewIcon/></div>
+    <div>
+      <div className='leftArrowStyles' onClick={goToPrevious}><ArrowBackIosNewIcon/></div>
     <div className='hero-banner-container'>
       <div className='hero-banner-wrapper'>
         <div className='hero-banner-text'>
@@ -58,8 +54,9 @@ function Banner({banner}: Props) {
 
         <div>
           <div className='desc'>
-              <h5>Descriere</h5>
-              <p>{banner[currentIndex].description}</p>
+            {banner[currentIndex].description.map((item:string, index:number) => (
+              <p key={index}>{item}</p>
+            ))}
           </div>
         </div>
       </div>

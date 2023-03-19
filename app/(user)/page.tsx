@@ -14,7 +14,6 @@ async function HomePage() {
 
 
   const banner = await client.fetch(querytwo);
-  console.log(banner)
 
   if (previewData()){
     return <div></div>

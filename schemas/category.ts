@@ -20,6 +20,12 @@ export default defineType({
       title:'Slug',
       type:'slug'
     }),
+    defineField({
+      name:'preturi',
+      title:"Preturi",
+      type: 'array',
+    of:[{type: 'string'}],
+    }),
 
   ],
 })

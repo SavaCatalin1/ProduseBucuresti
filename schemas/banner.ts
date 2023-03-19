@@ -23,7 +23,8 @@ export default defineType({
       defineField({
         name:'description',
         title:"Descriere",
-        type:'string'
+        type: 'array',
+      of:[{type: 'string'}],
       }),
       defineField({
         name: 'image',

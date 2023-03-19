@@ -1,7 +1,7 @@
 import '../../../../styles/globals.css'
 
 export const metadata = {
-  title: 'Mano'
+  title: 'Produse Bucuresti'
 }
 
 export default function RootLayout({

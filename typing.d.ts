@@ -8,8 +8,9 @@ type Base = {
 
 interface Category extends Base {
     title: string;
-    desc: string;
+    desc: string[];
     slug: Slug;
+    preturi: string[];
 }
 
 interface Slug {
@@ -38,6 +39,6 @@ interface Banner extends Base {
     text_1: string;
     text_2: string;
     text_3: string;
-    description: string;
+    description: string[];
     image: Image;
 }
