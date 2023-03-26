@@ -6,6 +6,8 @@ import ClientSideRoute from "./ClientSideRoute";
 import dynamic from "next/dynamic";
 import { useStateIfMounted } from "use-state-if-mounted";
 import Link from "next/link";
+import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
+import CloseIcon from '@mui/icons-material/Close';
 
 type Props = {
     categories: Category[];
@@ -13,6 +15,8 @@ type Props = {
 
 function Navbar({categories}: Props) {
   const [isDown,setIsDown] = useStateIfMounted(false);
+  const [isMobileDrop, setIsMobileDrop] = useStateIfMounted(false);
+  const [isMobileDropProd, setIsMobileDropProd] =useStateIfMounted(false);
 
   var anchor : any
   if (typeof document === 'undefined') {
@@ -46,7 +50,37 @@ function Navbar({categories}: Props) {
                 <div className="bg-sky-400 hover:bg-sky-500 text-white font-bold py-2 px-4 rounded-full ml-8 shadow hover:shadow-lg cursor-pointer">
                         <button onClick={() => {anchor?.scrollIntoView({ behavior: 'smooth', block: 'center' })}}>Contact</button>
                 </div>
+
+                
             </div>
+            <div className="mobile-icon" onClick={() => isMobileDrop ? setIsMobileDrop(false) : setIsMobileDrop(true)}>{isMobileDrop ? <CloseIcon/> : <FormatListBulletedIcon/> }</div>
+            {isMobileDrop &&
+                <div className="mobile-container">
+                    <ul className="flex flex-col mt-5 text-m font-medium ">
+                    <li onClick={() => isMobileDrop ? setIsMobileDrop(false) : setIsMobileDrop(true)}>
+                        <Link href="/" className="block py-2 pl-3 pr-4 text-gray-100 border-b border-gray-100  " aria-current="page">Home</Link>
+                    </li>
+                    <li>
+                        <button className="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-gray-100 border-b border-gray-100 " onClick={() => isMobileDropProd ? setIsMobileDropProd(false) : setIsMobileDropProd(true)}>Produse <svg className="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path></svg></button>
+                        
+                    {isMobileDropProd &&
+                        <div className={isMobileDropProd ? "mt-0.1 shadow-sm " : "h-0"}>
+                            <div className="grid px-1 py-1 mx-auto text-gray-900">
+                                {categories.map((categ,index) => (
+                                    <div onClick={() => isMobileDrop ? setIsMobileDrop(false) : setIsMobileDrop(true)} key={index}>
+                                        <ClientSideRoute route={`/${categ.slug.current}`} key={categ._id}>
+                                            <Dropdown bigtext={categ.title} smalltext={categ.desc} key={categ._id}/>
+                                        </ClientSideRoute>
+                                    </div>
+                                 ))}
+                             </div>
+                         </div>
+}
+
+                    </li>
+                </ul>
+                </div>
+            }
         </div>
 
         {/* Dropdown */}
