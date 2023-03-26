@@ -66,7 +66,7 @@ function Menu({search}:any){
     
 
     return (
-      <div>
+      <div className="shop-big-div">
             <div className="shop-container">
                     <div className={onScreen ? "shop-options" : "w-0"}>
                         {search.map((item:any,index:number) => (
@@ -76,10 +76,10 @@ function Menu({search}:any){
                     
                       <div className={onScreen ? "shop-show" : "shop-show-full"}>
                                       <div className='sliderStyles'>
-                                        <button onClick={() => onScreen ? setOnScreen(false) : setOnScreen(true)} className="options-button"><ListIcon/></button>
                                             <div className='leftArrowStyles2' onClick={goToPrevious}><ArrowBackIosNewIcon/></div>
-                                            <div style={slidesStyles}></div>
                                             <div className='rightArrowStyles2' onClick={goToNext}><ArrowForwardIosIcon/></div>
+                                            <div style={slidesStyles}></div>
+                                            
                                                 <div className='dotsContainer'>{images.map((slide:any, slideIndex:any) => (
                                                           <div key={slideIndex} className={currentIndex === slideIndex ? "dots-active" : "dots"} onClick={() => goToSlide(slideIndex)}>⬤</div>
                                                         ))}</div>
@@ -92,6 +92,11 @@ function Menu({search}:any){
                                     </div>
                       
                       </div>
+                      <div className={onScreen ? "shop-options2" : "w-0"}>
+                        {search.map((item:any,index:number) => (
+                        <div className={currentId === index ? "shop-left-item-active2" : "shop-left-item2"} key={index} onClick={() => handleChange(index)}>{item.title}</div>
+                        ))}
+                    </div>
               <div className="flex h-screen/2 justify-center items-center mt-5 cursor-pointer">
                   <ReactWhatsapp number="+40728463737" message={images[currentIndex]} className="bg-[#25D366] text-white px-6 py-2 rounded-full w-23 h-30 flex justify-center flex-row" element="center">Trimite pe Whatsapp &#10551;</ReactWhatsapp>
               </div>
