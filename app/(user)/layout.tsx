@@ -3,6 +3,7 @@ import Footer from '../../components/Footer'
 import Navbar from '../../components/Navbar'
 import { client } from '../../lib/sanity.client'
 import '../../styles/globals.css'
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata = {
   title: 'Produse Bucuresti'
@@ -57,6 +58,7 @@ export default async function RootLayout({
       <body>
         <Navbar categories={categories}/>
         {children}
+        <Analytics/>
         <Footer/>
         </body>
     </html>

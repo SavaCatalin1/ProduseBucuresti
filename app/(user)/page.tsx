@@ -4,8 +4,7 @@ import Banner from '../../components/Banner'
 import { groq } from 'next-sanity';
 import { client } from '../../lib/sanity.client';
 import Head from 'next/head';
-import Image from 'next/image';
-import kid from '../../images/kid.jpg'
+import { Analytics } from '@vercel/analytics/react';
 
 async function HomePage() {
   const querytwo = groq
@@ -35,7 +34,7 @@ async function HomePage() {
           content="incaltaminte copii la cele mai bune preturi"
         />
       </Head>
-      
+        <Analytics/>
         <Banner banner={banner}/>
     </div>
 }
