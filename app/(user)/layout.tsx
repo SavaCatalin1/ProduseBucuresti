@@ -56,9 +56,11 @@ export default async function RootLayout({
         />
       </head>
       <body>
+        <main>
         <Navbar categories={categories}/>
         {children}
         <Analytics/>
+        </main>
         <Footer/>
         </body>
     </html>
