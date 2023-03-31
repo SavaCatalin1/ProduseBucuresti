@@ -393,6 +393,19 @@ box-shadow: 5px 7px 14px 0px rgba(0,0,0,0.76);
 }
 
   @media screen and (max-width: 850px) {
+    body{
+      display: flex;
+      flex-direction: column;
+      min-height: 100svh;
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+    
+    main{
+      margin-bottom:20svh;
+    }
+    
 
     .hero-banner-container{
       padding: 10px 10px;
@@ -789,6 +802,19 @@ box-shadow: 5px 7px 14px 0px rgba(0,0,0,0.76);
   }
 
   @media screen and (max-width: 375px){
+
+    body{
+      display: flex;
+      flex-direction: column;
+      min-height: 100svh;
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+    
+    main{
+      margin-bottom:20svh;
+    }
    
     .hero-banner-image{
       height: 200px;
@@ -889,6 +915,20 @@ box-shadow: 5px 7px 14px 0px rgba(0,0,0,0.76);
   }
 
   @media screen and (max-width: 1100px) and (min-width:850px){
+
+    body{
+      display: flex;
+      flex-direction: column;
+      min-height: 100svh;
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+    
+    main{
+      margin-bottom:20svh;
+    }
+
     .hero-banner-container{
       padding: 80px 40px;
       background-color: rgba(56, 191, 248, 0.3);
@@ -958,6 +998,20 @@ box-shadow: 5px 7px 14px 0px rgba(0,0,0,0.76);
   }
 
   @media screen and (max-width: 1400px) and (min-width:1100px){
+
+    body{
+      display: flex;
+      flex-direction: column;
+      min-height: 100svh;
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+    
+    main{
+      margin-bottom:20svh;
+    }
+
     .hero-banner-image{
       position: absolute;
       height: 300px;
@@ -986,6 +1040,20 @@ box-shadow: 5px 7px 14px 0px rgba(0,0,0,0.76);
   }
 
   @media screen and (max-width: 767px){
+
+    body{
+      display: flex;
+      flex-direction: column;
+      min-height: 100svh;
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+    
+    main{
+      margin-bottom:20svh;
+    }
+
   .mobile-icon{
     display:flex;
     position: absolute;
@@ -1003,7 +1071,7 @@ box-shadow: 5px 7px 14px 0px rgba(0,0,0,0.76);
     background-color: rgba(0, 0, 0, 0.6);
     z-index:998;
   }
-  
+
   .footerContainer{
     width: 100%;
     background-color: rgba(56, 191, 248, 0.15);
