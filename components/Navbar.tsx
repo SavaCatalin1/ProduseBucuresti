@@ -28,7 +28,7 @@ function Navbar({categories}: Props) {
   
   
   return (
-    <nav className="bg-white border-gray-200 dark:border-gray-600 dark:bg-gray-900 border-b">
+    <nav className="bg-white border-gray-200  border-b">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl px-4 md:px-6 py-2.5">
           {/* Logo */}
             <Link href="/" className="flex items-center">
