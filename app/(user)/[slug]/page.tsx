@@ -52,7 +52,7 @@ async function Category({params: {slug}}: Props) {
         <div className="preturi-container">
             <h1>Preturi</h1>
             <div className="preturi-wrapper">
-            {elems.preturi.map((item:string, index:number) => (
+            {elems?.preturi?.map((item:string, index:number) => (
                 <h3 className="preturi-item" key={index}>{item}</h3>
             ))}
             </div>
