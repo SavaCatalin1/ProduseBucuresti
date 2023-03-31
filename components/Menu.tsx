@@ -99,7 +99,7 @@ function Menu({search}:any){
                         ))}
                     </div>
               <div className="flex h-screen/2 justify-center items-center mt-5 cursor-pointer">
-                  <ReactWhatsapp number="+40728463737" message={images[currentIndex]} className="bg-[#25D366] text-white px-6 py-2 rounded-full w-23 h-30 flex justify-center flex-row" element="center">Trimite pe Whatsapp &#10551;</ReactWhatsapp>
+                  <ReactWhatsapp number="+40764829341" message={images[currentIndex]} className="bg-[#25D366] text-white px-6 py-2 rounded-full w-23 h-30 flex justify-center flex-row" element="center">Trimite pe Whatsapp &#10551;</ReactWhatsapp>
               </div>
       </div>
     )
