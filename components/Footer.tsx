@@ -8,17 +8,12 @@ import {
 
 function Footer() {
   return (
-    <Box id='footer' className='text-center h-20 justify-center align-middle'>
-          <h1 style={{ color: "black", 
-                      textAlign: "center", 
-                      marginTop: "-50px" ,
-                      fontWeight: "400",
-                      fontSize: "20px"}}>
-            Contact
-          </h1>
-      <p className='text-sm'>Telefon: <i>0728463737</i> </p>
-      <p className='mt-5'>Bucuresti</p>
-    </Box>
+    <div className='footerContainer'>
+      <h1 className='footerTop'>Contact</h1>
+      <p className='footerMid'>Telefon: <i>0728463737</i></p>
+      <p className='footerBot'>Bucuresti</p>
+
+    </div>
   )
 }
 

@@ -2,9 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}
+
 .hero-banner-container{
     padding: 80px 40px;
-    background-color: #dcdcdc;
+    background-color: rgba(56, 191, 248, 0.3);
     border-radius: 15px;
     position: relative;
     height: 500px;
@@ -14,6 +20,7 @@
     margin-top: 12px;
   }
   .hero-banner-container .beats-solo{
+    text-shadow: 0.5px 0.5px 3px rgba(0, 0, 0, 1);
     color: white;
     font-size: 3.5em;
     text-transform: uppercase;
@@ -62,6 +69,8 @@
     top:2%;
     object-fit: cover;
     border-radius: 20px;
+    -webkit-box-shadow: 5px 7px 14px 0px rgba(0,0,0,0.76); 
+box-shadow: 5px 7px 14px 0px rgba(0,0,0,0.76);
   }
 
   .hero-banner-wrapper{
@@ -318,9 +327,25 @@
   .footerContainer{
     width: 100%;
     height: 100%;
-    background-color: #dcdcdc67;
+    background-color: rgba(56, 191, 248, 0.15);
     text-align: center;
     align-self: center;
+    margin-top: auto;
+    min-height: 10svh;
+  }
+
+  .footerTop{
+    font-weight: 700;
+    margin-bottom: 3svh;
+    margin-top: 1svh;
+  }
+
+  .footerMid{
+    font-weight: 300;
+  }
+
+  .footerBot{
+    margin-bottom: 1svh;
   }
 
 .preturi-container{
@@ -338,7 +363,7 @@
 }
 
 .preturi-wrapper{
-  background-color:#dcdcdc;
+  background-color: rgba(56, 191, 248, 0.2);
   padding: 60px;
   border-radius: 20px;
   box-shadow: 14px 10px 33px -6px rgba(0,0,0,0.2);
@@ -352,11 +377,16 @@
   font-weight: 300;
 }
 
+.banner2{
+  width: 0%;
+  height: auto;
+}
+
   @media screen and (max-width: 850px) {
 
     .hero-banner-container{
       padding: 10px 10px;
-      background-color: #dcdcdc;
+      background-color: rgba(56, 191, 248, 0.3);
       border-radius: 15px;
       position: relative;
       height: 500px;
@@ -685,7 +715,7 @@
     .footerContainer{
       width: 100%;
       height: 100%;
-      background-color: #dcdcdc67;
+      background-color: rgba(56, 191, 248, 0.15);
       text-align: center;
       align-self: center;
     }
@@ -696,6 +726,7 @@
     justify-content: center;
     align-items: center;
     padding: 30px;
+    
   }
   
   .preturi-container h1{
@@ -705,7 +736,7 @@
   }
   
   .preturi-wrapper{
-    background-color:#dcdcdc;
+    background-color: rgba(56, 191, 248, 0.2);
     padding: 40px;
     border-radius: 20px;
     box-shadow: 14px 10px 33px -6px rgba(0,0,0,0.2);
@@ -765,7 +796,7 @@
     
     .hero-banner-container{
       padding: 10px 10px;
-      background-color: #dcdcdc;
+      background-color: rgba(56, 191, 248, 0.3);
       border-radius: 15px;
       position: relative;
       height: 500px;
@@ -805,12 +836,38 @@
       margin-top: 1rem;
       white-space: nowrap;
     }
+
+    .leftArrowStyles{
+      z-index: 1;
+      cursor: pointer;
+      position: absolute;
+      float: left;
+      top:32%;
+      left: 1%;
+      padding: 5px;
+      background-color: rgb(240, 240, 240);
+      border-radius: 10px;
+    }
+  
+    .rightArrowStyles{
+      z-index: 1;
+      cursor: pointer;
+      position:absolute;
+      float: right; 
+      top: 32%;
+      right: 1%;
+      padding: 5px;
+      background-color: rgb(240, 240, 240);
+      border-radius: 10px;
+    }
+
+
   }
 
   @media screen and (max-width: 1100px) and (min-width:850px){
     .hero-banner-container{
       padding: 80px 40px;
-      background-color: #dcdcdc;
+      background-color: rgba(56, 191, 248, 0.3);
       border-radius: 15px;
       position: relative;
       height: 500px;

@@ -46,7 +46,7 @@ function Banner({banner}: Props) {
         <p className='beats-solo'>{banner[currentIndex].text_1}</p>
         <h3 className='hero-banner-text-h3'>{banner[currentIndex].text_2}</h3>
         <h1 className='hero-banner-text-h1'>{banner[currentIndex].text_3}</h1>
-        <div className="flex h-screen/2 justify-center items-center mt-10 cursor-pointer">
+        <div className="flex h-screen/2 justify-center items-center mt-5 cursor-pointer mb-3">
                   <ReactWhatsapp number="+40728463737" message={urlFor(banner[currentId].image).url()} className="bg-[#25D366] text-white px-6 py-2 rounded-full w-23 h-30 flex justify-center flex-row" element="center">Trimite pe Whatsapp &#10551;</ReactWhatsapp>
               </div>
         </div>

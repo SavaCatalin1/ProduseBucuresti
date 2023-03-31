@@ -1,4 +1,5 @@
 import { groq } from "next-sanity";
+import Head from "next/head";
 import Menu from "../../../components/Menu";
 import { client } from "../../../lib/sanity.client";
 
@@ -10,6 +11,7 @@ type Props = {
 }
 
 export const revalidate = 60;
+
 
 async function Category({params: {slug}}: Props) {
     //slug query
@@ -33,6 +35,19 @@ async function Category({params: {slug}}: Props) {
     const search = await client.fetch(queryTwo)
   return (
     <div>
+        <Head>
+        <title>Produse Bucuresti</title>
+        <meta
+          name="description"
+          content="Produse Bucuresti - incaltaminte copii la cele mai bune preturi"
+          key="desc"
+        />
+        <meta property="og:title" content="Produse Bucuresti" />
+        <meta
+          property="og:description"
+          content="incaltaminte copii la cele mai bune preturi"
+        />
+      </Head>
         <Menu search={search}/>
         <div className="preturi-container">
             <h1>Preturi</h1>

@@ -31,8 +31,9 @@ function Menu({search}:any){
         backgroundImage: `url(${images[currentIndex]})`,
         boxShadow: "14px 10px 33px -6px rgba(0,0,0,0.38)",
         WebkitBoxShadow: "14px 10px 33px -6px rgba(0,0,0,0.38)",
-        MozBoxShadow: "14px 10px 33px -6px rgba(0,0,0,0.38)"
-        
+        MozBoxShadow: "14px 10px 33px -6px rgba(0,0,0,0.38)",
+        backgroundRepeat: "no-repeat",
+        transform: "scale(1)"
     }
 
     const goToPrevious = () => {

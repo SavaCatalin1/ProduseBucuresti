@@ -41,6 +41,19 @@ export default async function RootLayout({
     const categories = await client.fetch(query);
   return (
     <html lang="en">
+      <head>
+        <title>Produse Bucuresti</title>
+        <meta
+          name="description"
+          content="Produse Bucuresti - incaltaminte copii la cele mai bune preturi"
+          key="desc"
+        />
+        <meta property="og:title" content="Produse Bucuresti" />
+        <meta
+          property="og:description"
+          content="incaltaminte copii la cele mai bune preturi"
+        />
+      </head>
       <body>
         <Navbar categories={categories}/>
         {children}
