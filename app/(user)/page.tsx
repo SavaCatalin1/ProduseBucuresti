@@ -16,7 +16,6 @@ async function HomePage() {
 
 
   const banner = await client.fetch(querytwo);
-
   if (previewData()){
     return <div></div>
   } 
@@ -34,7 +33,10 @@ async function HomePage() {
           content="incaltaminte copii la cele mai bune preturi"
         />
       </Head>
-        <Banner banner={banner}/>
+      {banner.map((item:any,index:number) => (
+        <Banner banner={item} key={index}/>
+      ))}
+        
     </div>
 }
 

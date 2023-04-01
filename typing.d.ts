@@ -40,5 +40,5 @@ interface Banner extends Base {
     text_2: string;
     text_3: string;
     description: string[];
-    image: Image;
+    image: Image[];
 }

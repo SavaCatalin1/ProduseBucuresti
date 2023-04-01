@@ -56,7 +56,7 @@ function Navbar({categories}: Props) {
 
                 
             </div>
-            <div className="mobile-icon" onClick={() => isMobileDrop ? setIsMobileDrop(false) : setIsMobileDrop(true)}>{isMobileDrop ? <CloseIcon/> : <FormatListBulletedIcon/> }</div>
+            <div className="mobile-icon bg-sky-100 " onClick={() => isMobileDrop ? setIsMobileDrop(false) : setIsMobileDrop(true)}>{isMobileDrop ? <CloseIcon/> : <FormatListBulletedIcon/> }</div>
             {isMobileDrop &&
                 <div className="mobile-container">
                     <ul className="flex flex-col mt-5 text-m font-medium ">

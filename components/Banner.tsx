@@ -9,16 +9,14 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ReactWhatsapp from 'react-whatsapp';
 
 type Props = {
-  banner: Banner[];
+  banner: Banner;
 }
 
 function Banner({banner}: Props) {
   const [currentIndex, setCurrentIndex] = useStateIfMounted(0);
-  const [currentId, setCurrentId] = useStateIfMounted(0);
-
-
-  if(banner[0]){
-    var imagess = urlFor(banner[currentId].image).url()
+  
+  if(banner){
+    var imagess = urlFor(banner.image[currentIndex]).url()
   }else{
     imagess = ""
   }
@@ -27,40 +25,43 @@ function Banner({banner}: Props) {
 
   const goToPrevious = () => {
     const isFirstSlide = currentIndex === 0
-    const newIndex = isFirstSlide ? banner.length - 1 : currentIndex - 1;
+    const newIndex = isFirstSlide ? banner.image.length - 1 : currentIndex - 1;
     setCurrentIndex(newIndex);
   }
 
   const goToNext = () => {
-    const isLastSlide = currentIndex === banner.length - 1
+    const isLastSlide = currentIndex === banner.image.length - 1
     const newIndex = isLastSlide ? 0 : currentIndex + 1
-    setCurrentIndex(newIndex)
+    setCurrentIndex(newIndex);
   }
 
   return (
     <div>
     <div className='hero-banner-container'>
-        <div className='leftArrowStyles' onClick={goToPrevious}><ArrowBackIosNewIcon/></div>
-      
+      <div className='flex-piece'>
         <div className='hero-banner-text'>
-        <p className='beats-solo'>{banner[currentIndex].text_1}</p>
-        <h3 className='hero-banner-text-h3'>{banner[currentIndex].text_2}</h3>
-        <h1 className='hero-banner-text-h1'>{banner[currentIndex].text_3}</h1>
+        <p className='beats-solo'>{banner.text_1}</p>
+        <h3 className='hero-banner-text-h3'>{banner.text_2}</h3>
+        <h1 className='hero-banner-text-h1'>{banner.text_3}</h1>
         <div className="flex h-screen/2 justify-center items-center mt-5 cursor-pointer mb-3">
-                  <ReactWhatsapp number="+40764829341" message={urlFor(banner[currentId].image).url()} className="bg-[#25D366] text-white px-6 py-2 rounded-full w-23 h-30 flex justify-center flex-row" element="center">Trimite pe Whatsapp &#10551;</ReactWhatsapp>
+                  <ReactWhatsapp number="+40764829341" message={urlFor(banner.image[currentIndex]).url()} className="bg-[#25D366] text-white px-6 py-2 rounded-full w-23 h-30 flex justify-center flex-row" element="center">Trimite pe Whatsapp &#10551;</ReactWhatsapp>
               </div>
         </div>
-        <img  src={urlFor(banner[currentIndex].image).url()} alt='pantofi' className='hero-banner-image'/>
-
-        <div>
-          <div className='desc'>
-            {banner[currentIndex].description.map((item:string, index:number) => (
+                <div className='image-div'>
+                  <div className='leftArrowStyles' onClick={goToPrevious}><ArrowBackIosNewIcon/></div>
+                  <img  src={urlFor(banner.image[currentIndex]).url()} alt='pantofi' className='hero-banner-image'/>
+                  <div className='rightArrowStyles' onClick={goToNext}><ArrowForwardIosIcon/></div>
+                </div>
+      </div> 
+                 <div className='desc'>
+            {banner.description.map((item:string, index:number) => (
               <p key={index}>{item}</p>
             ))}
-          </div>
-      </div>
-      <div className='rightArrowStyles' onClick={goToNext}><ArrowForwardIosIcon/></div>
+          </div> 
+
     </div>
+    
+      
     </div>
   )
 }
