@@ -1188,6 +1188,8 @@ box-shadow: 5px 7px 14px 0px rgba(0,0,0,0.76);
     top: 1%;
     right: 2%;
     z-index: 999;
+    background-color: rgba(56, 191, 248, 0.15);
+    border-radius: .5svh;
   }
 
   .mobile-container{
@@ -1196,7 +1198,7 @@ box-shadow: 5px 7px 14px 0px rgba(0,0,0,0.76);
     right: 0%;
     width: 50%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.5);
     z-index:998;
   }
 

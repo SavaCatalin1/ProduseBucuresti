@@ -78,8 +78,12 @@ function Navbar({categories}: Props) {
                                  ))}
                              </div>
                          </div>
-}
-
+                    }
+                    </li>
+                    <li>
+                    <ClientSideRoute route={`/info`}>
+                        <button className=" py-2  border-b border-gray-100 w-full border-t  text-gray-100" onClick={() => isMobileDrop ? setIsMobileDrop(false) : setIsMobileDrop(true)}>Info</button>
+                    </ClientSideRoute>
                     </li>
                 </ul>
                 </div>
