@@ -71,7 +71,7 @@ function Newsletter() {
               onChange={handleEmailChange}
               value={email}
             />
-            <button type='submit' name='submit'>Aboneaza-te!</button>
+            <input type='submit'>Aboneaza-te!</input>
           </form>
       )}
         </div>
