@@ -443,7 +443,7 @@ main{
 
 .form-container input{
   padding: 0.5svh;
-  border-radius: 0.4svh;
+  border-radius: 1svh 0svh 0svh 1svh;
   border: 0.2px solid;
 }
 
