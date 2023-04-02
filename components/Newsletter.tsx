@@ -48,9 +48,6 @@ function Newsletter() {
     setName(value)
   }
     
-  const handlers = useSwipeable({
-    onTap: () => handleSubmit(),
-  });
 
     return (
         <div className='newsletter-container'>
@@ -64,7 +61,7 @@ function Newsletter() {
             } 
 
             {status === null && (
-          <form onSubmit={handleSubmit} className="form-container">
+          <form onSubmit={handleSubmit} className="form-container" method='POST'>
             <input
               aria-label="Your email address"
               name="email_address"
@@ -74,7 +71,7 @@ function Newsletter() {
               onChange={handleEmailChange}
               value={email}
             />
-            <button {...handlers}>Aboneaza-te!</button>
+            <button type='submit' name='submit'>Aboneaza-te!</button>
           </form>
       )}
         </div>
