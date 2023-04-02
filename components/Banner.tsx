@@ -7,6 +7,7 @@ import { useStateIfMounted } from 'use-state-if-mounted';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ReactWhatsapp from 'react-whatsapp';
+import { useSwipeable } from "react-swipeable";
 
 type Props = {
   banner: Banner;
@@ -35,6 +36,11 @@ function Banner({banner}: Props) {
     setCurrentIndex(newIndex);
   }
 
+  const handlers = useSwipeable({
+    onSwipedRight: () => goToNext(),
+    onSwipedLeft: () => goToPrevious(),
+  });
+
   return (
     <div>
     <div className='hero-banner-container'>
@@ -47,14 +53,18 @@ function Banner({banner}: Props) {
                   <ReactWhatsapp number="+40764829341" message={urlFor(banner.image[currentIndex]).url()} className="bg-[#25D366] text-white px-6 py-2 rounded-full w-23 h-30 flex justify-center flex-row" element="center">Trimite pe Whatsapp &#10551;</ReactWhatsapp>
               </div>
         </div>
+              <div>
                 <div className='image-div'>
                   <div className='leftArrowStyles' onClick={goToPrevious}><ArrowBackIosNewIcon/></div>
-                  <img  src={urlFor(banner.image[currentIndex]).url()} alt='pantofi' className='hero-banner-image'/>
+                  <img  src={urlFor(banner.image[currentIndex]).url()} alt='pantofi' className='hero-banner-image' {...handlers}/>
                   <div className='rightArrowStyles' onClick={goToNext}><ArrowForwardIosIcon/></div>
-                </div>
-      </div> 
+              </div>
+              <div className='dotsContainer2'>{banner.image.map((slide:any, slideIndex:any) => (
+                      <div key={slideIndex} className={currentIndex === slideIndex ? "dots-active" : "dots"} >⬤</div>))}</div>           
+                  </div>
+              </div>
                  <div className='desc'>
-            {banner.description.map((item:string, index:number) => (
+                {banner.description.map((item:string, index:number) => (
               <p key={index}>{item}</p>
             ))}
           </div> 

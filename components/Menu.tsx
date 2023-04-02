@@ -6,12 +6,18 @@ import urlFor from "../lib/urlFor";
 import dynamic from "next/dynamic";
 import { useStateIfMounted } from "use-state-if-mounted";
 import ReactWhatsapp from "react-whatsapp";
-import ListIcon from '@mui/icons-material/List';
+import { useSwipeable } from "react-swipeable";
 
 function Menu({search}:any){
     const [currentIndex, setCurrentIndex] = useStateIfMounted(0);
     const [currentId, setCurrentId] = useStateIfMounted(0);
     const[onScreen, setOnScreen] = useStateIfMounted(true);
+    const[maximized, setMaximized] = useStateIfMounted(false);
+
+    const handlers = useSwipeable({
+      onSwipedRight: () => goToNext(),
+      onSwipedLeft: () => goToPrevious(),
+    });
 
     if(search[0]){
       var imagesArray = search[currentId].image
@@ -27,7 +33,7 @@ function Menu({search}:any){
         height: '100%',
         borderRadius: '15px',
         backgroundPosition: 'center',
-        backgroundSize: 'cover',
+        backgroundSize: '100%',
         backgroundImage: `url(${images[currentIndex]})`,
         boxShadow: "14px 10px 33px -6px rgba(0,0,0,0.38)",
         WebkitBoxShadow: "14px 10px 33px -6px rgba(0,0,0,0.38)",
@@ -79,7 +85,7 @@ function Menu({search}:any){
                                       <div className='sliderStyles'>
                                             <div className='leftArrowStyles2' onClick={goToPrevious}><ArrowBackIosNewIcon/></div>
                                             <div className='rightArrowStyles2' onClick={goToNext}><ArrowForwardIosIcon/></div>
-                                            <div style={slidesStyles}></div>
+                                            <div {...handlers} style={slidesStyles} className={maximized ? " " : "maximized"} onClick={() => maximized ? setMaximized(false) : setMaximized(true)}></div>
                                             
                                                 <div className='dotsContainer'>{images.map((slide:any, slideIndex:any) => (
                                                           <div key={slideIndex} className={currentIndex === slideIndex ? "dots-active" : "dots"} onClick={() => goToSlide(slideIndex)}>⬤</div>

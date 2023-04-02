@@ -86,7 +86,7 @@ main{
     display: flex;
     flex-direction: column;
      color: #324d67;
-  
+    margin-top: -1.5svh;
   }
   .desc p{
     color: #5f5f5f;
@@ -460,7 +460,49 @@ main{
   
 }
 
+.maximized{
+  position: relative;
+  top: 0;
+  left: 0%;
+  max-width: 100%;
+  height: 100%;
+  z-index: 0;
+  cursor: pointer;
+  overflow: auto;
+}
+
+
+  .dotsContainer2{
+    display: flex;
+    justify-content: center;
+    max-width: 900px;
+    overflow-x: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    margin-top: 1svh;
+    
+  }
+
+  .dotsContainer2::-webkit-scrollbar{
+    display: none;
+  }
+
+
   @media screen and (max-width: 500px) {
+
+    .dots{
+      height: 13px;
+    }
+
+    .maximized{
+      position: relative;
+      top: 0;
+      left: 0%;
+      max-width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: auto;
+    }
 
     .mobile-icon{
       display:block;
@@ -473,6 +515,7 @@ main{
       width: 50%;
       background-color: rgba(0, 0, 0, 0.6);
       height: 100%;
+      z-index: 999;
     }
 
     body{
@@ -490,7 +533,7 @@ main{
     
 
     .hero-banner-container{
-      padding: 30px 40px;
+      padding: 10px 40px;
       background-color: rgba(56, 191, 248, 0.3);
       border-radius: 15px;
       height: 500px;
@@ -503,7 +546,7 @@ main{
     .flex-piece{
       display: flex;
       flex-direction: column;
-      padding-bottom: 2svh;
+      padding-bottom: 3svh;
     }
 
     .hero-banner-container .beats-solo{
@@ -611,10 +654,10 @@ main{
   
     .shop-container{
       display: flex;
-      min-height: 700px;
+      min-height: 250px;
       min-width: 320px;
       max-width: 768px;
-      max-height: 700px;
+      max-height: 250px;
       margin: 0;
       margin-top: 20px;
       justify-content: center;
@@ -756,6 +799,7 @@ main{
       border-radius: 10px;
       margin-bottom: 0svh;
       margin-right: 0svh;
+      display: none;
     }
   
     .rightArrowStyles{
@@ -766,6 +810,7 @@ main{
       border-radius: 10px;
       margin-bottom: 0svh;
       margin-left: 0svh;
+      display: none;
     }
     .leftArrowStyles2{
       z-index: 1;
@@ -775,6 +820,11 @@ main{
       left: 10px;
       background-color: rgb(255, 255, 255,0.4);
       border-radius: 10px;
+      display: none;
+    }
+    
+    .rightArrowStyles2{
+      display: none;
     }
 
   
@@ -899,6 +949,10 @@ main{
     padding: 2svh 1svh 0svh 1svh;
   }
 
+  .info-wrapper{
+    padding: 2svh 1svh 1svh;
+  }
+
   
 
   }
@@ -950,7 +1004,7 @@ main{
     }
     
    .hero-banner-container{
-    padding: 20px 40px;
+    padding: 5px 40px;
     background-color: rgba(56, 191, 248, 0.3);
     border-radius: 15px;
     height: 500px;
@@ -1160,7 +1214,7 @@ main{
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 4svh 5svh 10svh 10svh;
+      padding: 3svh 1svh 2svh 2svh;
     
     }
     
@@ -1233,12 +1287,27 @@ main{
       max-height: 15svh;
       margin-top: 20px;
     }
+
+    .info-wrapper{
+      padding: 2svh 3svh 2svh 3svh;
+    }
   }
 
   
 
 
 @media screen and (max-width: 625px) and (min-width:500px){
+
+  .maximized{
+    position: relative;
+    top: 0;
+    left: 0%;
+    max-width: 100%;
+    height: 100%;
+    z-index: 999;
+    cursor: pointer;
+    overflow: auto;
+  }
 
 
   .mobile-icon{
@@ -1319,9 +1388,45 @@ main{
       margin-top: .5svh;
   }
 
+  .info-container{
+    align-items: center;
+    margin: auto;
+    width: 80%;
+    margin-top: 2svh;
+  
+  }
+
+  .info-wrapper{
+    padding: 2svh 1svh 1svh 1svh;
+  }
+
 }
 
 @media screen and (max-width: 768px) and (min-width:625px){
+
+  .info-container{
+    align-items: center;
+    margin: auto;
+    width: 80%;
+    margin-top: 2svh;
+  
+  }
+
+  .info-wrapper{
+    padding: 2svh 1svh 1svh 1svh;
+  }
+
+  .maximized{
+    position: relative;
+    top: 0;
+    left: 0%;
+    max-width: 100%;
+    height: 100%;
+    z-index: 999;
+    cursor: pointer;
+    overflow: auto;
+  }
+
 
   .mobile-icon{
     display:block;
@@ -1407,6 +1512,17 @@ main{
 
 @media screen and (max-width: 1000px) and (min-width:740px){
 
+  .maximized{
+    position: relative;
+    top: 0;
+    left: 0%;
+    max-width: 100%;
+    height: 100%;
+    z-index: 999;
+    cursor: pointer;
+    overflow: auto;
+  }
+
   .hero-banner-container{
     padding: 30px 40px;
     background-color: rgba(56, 191, 248, 0.3);
@@ -1471,9 +1587,43 @@ main{
   }
 
 
+  .info-container{
+    align-items: center;
+    margin: auto;
+    width: 80%;
+    margin-top: 2svh;
+  
+  }
+
+  .info-wrapper{
+    padding: 3svh 1svh 1svh 3svh;
+  }
 }
 
 @media screen and (max-width: 1250px) and (min-width:1000px){
+
+  .info-container{
+    align-items: center;
+    margin: auto;
+    width: 60%;
+    margin-top: 2svh;
+  
+  }
+
+  .info-wrapper{
+    padding: 3svh 1svh 1svh 3svh;
+  }
+
+  .maximized{
+    position: relative;
+    top: 0;
+    left: 0%;
+    max-width: 100%;
+    height: 100%;
+    z-index: 999;
+    cursor: pointer;
+    overflow: auto;
+  }
 
   .hero-banner-container{
     padding: 30px 40px;
@@ -1537,6 +1687,5 @@ main{
       margin-right: auto;
       margin-top: .5svh;
   }
-
 
 }
