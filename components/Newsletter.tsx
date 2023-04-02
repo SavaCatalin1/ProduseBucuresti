@@ -2,6 +2,7 @@
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import '../styles/globals.css'
+import { useSwipeable } from "react-swipeable";
 
 function Newsletter() {
     const [status, setStatus] = useState<string | null>(null)
@@ -47,6 +48,10 @@ function Newsletter() {
     setName(value)
   }
     
+  const handlers = useSwipeable({
+    onTap: () => handleSubmit(),
+  });
+
     return (
         <div className='newsletter-container'>
             <h3 className='newsletter-title'>Aboneaza-te pentu noutati</h3>
@@ -69,7 +74,7 @@ function Newsletter() {
               onChange={handleEmailChange}
               value={email}
             />
-            <button>Aboneaza-te!</button>
+            <button {...handlers}>Aboneaza-te!</button>
           </form>
       )}
         </div>
