@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useEffect } from 'react'
 import urlFor from '../lib/urlFor';
 import dynamic from 'next/dynamic';
 import '../styles/globals.css'
@@ -40,6 +40,13 @@ function Banner({banner}: Props) {
     onSwipedRight: () => goToNext(),
     onSwipedLeft: () => goToPrevious(),
   });
+
+  useEffect(() => {
+    banner.image.forEach((image:any) => {
+      const img = new Image();
+      img.src = image;
+    });     
+}, [])
 
   return (
     <div>

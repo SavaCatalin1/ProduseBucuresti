@@ -61,7 +61,7 @@ function Newsletter() {
             } 
 
             {status === null && (
-          <form onSubmit={handleSubmit} className="form-container" method='POST' action='#'>
+          <form onSubmit={handleSubmit} className="form-container" action='#'>
             <input
               aria-label="Your email address"
               name="email_address"
@@ -71,7 +71,7 @@ function Newsletter() {
               onChange={handleEmailChange}
               value={email}
             />
-            <input type='submit'>Aboneaza-te!</input>
+            <button type='submit'>Aboneaza-te!</button>
           </form>
       )}
         </div>

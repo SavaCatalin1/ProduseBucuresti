@@ -8,7 +8,9 @@ import { useStateIfMounted } from "use-state-if-mounted";
 import ReactWhatsapp from "react-whatsapp";
 import { useSwipeable } from "react-swipeable";
 
+
 function Menu({search}:any){
+  <link rel="preload" href="<your_image_source_here>" as="image"></link>
     const [currentIndex, setCurrentIndex] = useStateIfMounted(0);
     const [currentId, setCurrentId] = useStateIfMounted(0);
     const[onScreen, setOnScreen] = useStateIfMounted(true);
@@ -67,8 +69,12 @@ function Menu({search}:any){
     }
 
     useEffect(() => {
-        setCurrentIndex(0)     
-    }, [images])
+        setCurrentIndex(0)
+        imagess.forEach((image:any) => {
+          const img = new Image();
+          img.src = image;
+        });     
+    }, [currentId])
     
     
 
